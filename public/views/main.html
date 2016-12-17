@@ -1,0 +1,10 @@
+<h1> Le jeu du pendu</h1>
+<h2>Proposer une lettre</h2>
+<form ng-submit="vm.compare(proposition)">
+  <input type="text" ng-model="proposition">
+  <input type="submit" value="Proposer">
+</form>
+<h2>Mot à trouver</h2>
+<ul>
+  <li ng-repeat="letter in vm.arrayWords track by $index"><p ng-show="letter == vm.response">{{letter}}</p></li>
+</ul>
