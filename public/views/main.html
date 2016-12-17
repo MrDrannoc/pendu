@@ -1,10 +1,14 @@
 <h1> Le jeu du pendu</h1>
 <h2>Proposer une lettre</h2>
-<form ng-submit="vm.compare(proposition)">
-  <input type="text" ng-model="proposition">
+<form ng-submit="vm.compare()">
+  <input type="text" ng-model="vm.proposition">
   <input type="submit" value="Proposer">
 </form>
 <h2>Mot à trouver</h2>
 <ul>
-  <li ng-repeat="letter in vm.arrayWords track by $index"><p ng-show="letter == vm.response">{{letter}}</p></li>
+  <li ng-repeat="letter in vm.arrayWords track by $index"><p ng-show="vm.correct.indexOf(letter) === -1 ? false : true">{{letter}}</p></li>
 </ul>
+<h2>Nombre d'erreur</h2>
+<p>
+  {{vm.count}}
+</p>
